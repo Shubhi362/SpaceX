@@ -1,0 +1,52 @@
+<div class="container-fluid">
+<div class="row" style="background-color:lightgray">
+  <div class="row">
+<h1 style="padding-top:15px;padding-left:15px;"><b>SpaceX Launch Program</b></h1>
+</div>
+<div class="row" style="padding-left:15px;padding-right:15px;">
+  <div  style="margin-top:20px;" class="col-xs-12 col-md-4 col-lg-2" >
+    <div  style="background-color: white;padding-left:5%;padding-right:5%;max-width:90%;min-width:200px;">
+<h2  style="padding-left:15px;" ><b>Filters</b></h2>
+<h3 style="padding-left:60px">Launch Year</h3>
+<hr>
+<div class="row">
+  <div class="col-xs-6" style="margin:10px;margin-left:30px;" *ngFor="let year of allYears">
+<button mat-flat-button (click)="applyFilterByYear(year)" id="{{year}}" [routerLink]="['/&launch_year='+year]" routerLinkActive="active" color="blue">{{year}}</button>
+
+
+</div>
+</div>
+<h3 style="padding-left:30px;padding-top:30px;">Successful Launch</h3>
+<hr>
+
+<button mat-flat-button  style="margin-left:15px;;" id="launch_true" [routerLink]="['/&launch_success=true']"  (click)="applyFilterLaunch(true)" color="blue">True</button>
+<button mat-flat-button style="margin-left:40px;" id="launch_false" [routerLink]="['/&launch_success=false']"  (click)="applyFilterLaunch(false)"  color="blue">False</button><br>
+<h3 style="padding-left:30px;;padding-top:30px;">Successful Landing</h3>
+<hr>
+<button mat-flat-button  style="margin-left:15px;margin-bottom:30px;" id="land_true" [routerLink]="['/&land_success=true']"  (click)="applyFilterLand(true)" color="blue">True</button>
+<button mat-flat-button style="margin-left:40px;margin-bottom:30px;"  id="land_false" [routerLink]="['/&land_success=false']"  (click)="applyFilterLand(false)"  color="blue">False</button>
+</div>
+  </div>
+<div  class="col-md-8 col-lg-10 col-xs-12">
+  <div class="row">
+  <div class="col-md-6 col-lg-3 col-xs-12" style="margin-top:15px;" *ngFor="let records of allSpaceXData">
+<mat-card>
+<mat-card-header style="margin-right:60px;margin-top:10px;">
+    <img style="height:150px;background-color:lightgray"mat-card-image src="{{records.links.mission_patch_small}}">
+  </mat-card-header>
+    <mat-card-content>
+    <p>
+      <b style="color:blue">{{records.mission_name}} #{{records.flight_number}}</b><br>
+      <b>Mission Ids</b> {{records.mission_id[0]}}<br>
+      <b>Launch Year</b> {{records.launch_year}}<br>
+      <b>Successfull Launch</b> {{records.launch_success}}<br>
+      <b>Successfull Landing</b> {{records.first_stage?.cors[0]?.land_success}}<br>
+      </p>
+    </mat-card-content>
+</mat-card>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

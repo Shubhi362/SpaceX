@@ -1,0 +1,7 @@
+.mat-flat-button.mat-blue{
+    background-color:lightgreen;
+    color: black;
+ }
+ .mat-flat-button.mat-blue .active{
+    background: yellow;
+  }
