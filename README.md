@@ -1,6 +1,18 @@
-# MaterialAngf
+# spaceX
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.7.
+
+
+## Code Setup
+Folloow below steps to setup code on your local:
+1. install node js (LTS) from below url
+  https://nodejs.org/en/
+2. install angular using below command from npm:
+npm install -g @angular/cli.
+
+3. Open the project path in terminal and run 'npm install' command
+
+4. once the npm install is completed run 'ng serve'. it will run the code on localhost:4200
 
 ## Development server
 
@@ -22,7 +34,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# SpaceX
